@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from 'react';
-import { useLocalStorage, useCookieStorage } from "../hooks";
+import { useLocalStorage, useCookieStorage } from ".";
 const UserContext = createContext();
 const UpdateUserContext = createContext();
 

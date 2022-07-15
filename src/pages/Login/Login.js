@@ -3,9 +3,7 @@ import Form from '../../components/Form/Form'
 
 function Login() {
     return (
-        <React.Fragment>
-            <Form />
-        </React.Fragment>
+        <Form />
     )
 }
 

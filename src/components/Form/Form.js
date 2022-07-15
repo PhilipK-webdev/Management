@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from "react-router";
 import S from './styles';
-import { useUserContext } from "../../services/UserContext";
+import { useUserContext } from "../../hooks/useUserContext";
 import { ReactComponent as ReactLogo } from '../../assets/oval.svg';
 function Form() {
     const [password, setPasswod] = useState("");
@@ -12,7 +12,8 @@ function Form() {
 
     useEffect(() => {
         const { cookie } = dataObjects;
-        cookie !== 0 ? navigate("/info") : navigate("/")
+        console.log(cookie)
+        cookie ? navigate("/info") : navigate("/")
     }, [])
 
     const submitForm = async (e) => {
@@ -25,21 +26,24 @@ function Form() {
             setEmail("");
             setPasswod("");
             setIsLoading(true);
-            const response = await fetch('https://private-052d6-testapi4528.apiary-mock.com/authenticate', {
-                method: 'POST', headers: {
-                    'Content-Type': 'application/json'
-                }, body: JSON.stringify({ password, email })
-            });
-            if (response.ok) {
-                const { setUser, updateCookie } = setters;
-                const userInfo = await response.json();
-                const { token, personalDetails } = userInfo[0];
-                setUser(personalDetails);
-                updateCookie(token, 1)
-                setIsLoading(false);
-                navigate("/info");
+            try {
+                const response = await fetch('https://private-052d6-testapi4528.apiary-mock.com/authenticate', {
+                    method: 'POST', headers: {
+                        'Content-Type': 'application/json'
+                    }, body: JSON.stringify({ password, email })
+                });
+                if (response.ok) {
+                    const { setUser, updateCookie } = setters;
+                    const userInfo = await response.json();
+                    const { token, personalDetails } = userInfo[0];
+                    setUser(personalDetails);
+                    updateCookie(token, 1)
+                    setIsLoading(false);
+                    navigate("/info");
+                }
+            } catch (error) {
+                // ERROR status code 404
             }
-            // ERROR status code 404
         } else {
             console.log("ERROR")
         }
@@ -70,7 +74,7 @@ function Form() {
                         onChange={(e) => setPasswod(e.target.value)}
                     />
 
-                    <S.Submit onSubmit={submitForm} isLoading={isLoading}>Login
+                    <S.Submit type="submit" isLoading={isLoading}>Login
                         {isLoading && <ReactLogo />}
                     </S.Submit>
                 </S.Form>

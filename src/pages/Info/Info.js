@@ -3,9 +3,7 @@ import Main from '../../components/Main/Main'
 
 function Info() {
     return (
-        <React.Fragment>
-            <Main />
-        </React.Fragment>
+        <Main />
     )
 }
 
