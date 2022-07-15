@@ -24,7 +24,7 @@ const Card = styled.div`
 const Form = styled.form`
 display: flex;
 flex-direction: column;
-padding-top: 2vh;
+padding-top: 1vh;
 font-family: 'Antonio';
 `;
 
@@ -47,7 +47,7 @@ border-radius: .5rem;
 font-size: 2rem;
 color: black;
 font-family: 'Antonio';
-margin-bottom:1vh;
+margin-bottom:3vh;
 padding-left:10px;
 &:focus{
     outline:none;
@@ -86,6 +86,17 @@ margin-left: 3.5vw;
 margin-bottom:1vh;
 `;
 
+const LabelError = styled.label`
+font-size: 1rem;
+color: black;
+font-family: 'Antonio';
+margin-left: 3.5vw;
+position: absolute;
+top: 49vh;
+left: 59vw;
+opacity:${(props) => !props.isValidEmail ? '1' : '0'}
+`;
+
 const Submit = styled.button`
 height: 6vh;
 width: 14vw;
@@ -107,4 +118,10 @@ align-items:center;
 }
 
 `;
-export default { Container, Card, Form, Email, Password, Label, Titel, Submit };
+
+const Alert = styled.div`
+display: flex;
+justify-content: center;
+margin-top: 5px;
+`
+export default { Container, Card, Form, Email, Password, Label, Titel, Submit, Alert, LabelError };

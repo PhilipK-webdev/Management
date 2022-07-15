@@ -22,7 +22,7 @@ function TableUserInfo({ HEADER, information }) {
     }));
     return (
         <TableContainer component={Container} size="small" sx={{
-            border: "1px solid #7E8696", padding: "10px",
+            border: "3px solid #C4C7CC", padding: "10px",
             boxShadow: "box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25)",
             backgroundColor: 'white',
             borderRadius: "0.5rem",
