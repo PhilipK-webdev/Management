@@ -12,7 +12,7 @@ function Form() {
 
     useEffect(() => {
         const { cookie } = dataObjects;
-        cookie !== "" ? navigate("/info") : navigate("/")
+        cookie !== 0 ? navigate("/info") : navigate("/")
     }, [])
 
     const submitForm = async (e) => {

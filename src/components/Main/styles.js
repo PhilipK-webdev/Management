@@ -11,16 +11,32 @@ const Container = styled.div`
     margin-top: 2.5vh;
 `;
 const UserInfo = styled.div`
-border:1px solid red;
 display:flex;
 flex:20%;
+flex-direction:column;
 `;
-
+const Title = styled.div`
+font-size:2rem;
+font-family: 'Antonio';
+display:flex;
+justify-content:center;
+margin-bottom:2vh;
+margin-top:1vh;
+background-color:white;
+border: 3px solid #C4C7CC;
+letter-spacing:5px;
+border-radius: .2rem;
+`;
 const UserStats = styled.div`
-border:1px solid blue;
 display:flex;
 flex:80%;
+flex-direction:column;
 `;
+
+const Box = styled.div`
+   display: flex;
+    margin-bottom: 1vh;
+`
 const Filter = styled.input`
 padding: 10px;
 width: 80%;
@@ -28,7 +44,7 @@ height: 2vh;
 margin-left: auto;
 margin-right: auto;
 border: 3px solid #C4C7CC;
-border-radius: .5rem;
+border-radius: .2rem;
 font-size: 1rem;
 color: black;
 font-family: 'Antonio';
@@ -49,7 +65,7 @@ height: 4.7vh;
 margin-left: auto;
 margin-right: auto;
 border: 3px solid #C4C7CC;
-border-radius: .5rem;
+border-radius: .2rem;
 font-size: 1.3rem;
 color: black;
 font-family: 'Antonio';
@@ -67,4 +83,4 @@ margin-left:10px;
 
 
 
-export default { Container, UserInfo, UserStats, Filter, Select };
+export default { Container, UserInfo, UserStats, Filter, Select, Box, Title };
