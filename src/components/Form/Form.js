@@ -49,6 +49,9 @@ function Form() {
             }
         } else {
             setCaugthError("Input invalid");
+            setTimeout(() => {
+                setCaugthError("")
+            }, 2000)
         }
     }
 
