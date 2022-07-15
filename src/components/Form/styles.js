@@ -99,5 +99,12 @@ font-family: 'Antonio';
 background-color:#15C043;
 color:white;
 margin-top:1vh;
+display:flex;
+justify-content:${(props) => props.isLoading ? 'space-around' : 'center'};
+align-items:center;
+&:focus{
+    outline:none
+}
+
 `;
 export default { Container, Card, Form, Email, Password, Label, Titel, Submit };
