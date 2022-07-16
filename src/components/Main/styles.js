@@ -14,6 +14,7 @@ const UserInfo = styled.div`
 display:flex;
 flex:20%;
 flex-direction:column;
+margin-right:10px;
 `;
 const Card = styled.div`
 display: flex;
@@ -22,19 +23,17 @@ flex-direction: column;
 align-items: center;
 margin-bottom: 3vh;
 margin-top: 8vh;
-height: 20vh;
 border: 3px solid #C4C7CC;
 `
 const Info = styled.div`
-display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 27vw;
 `
 
 const InfoSection = styled.div`
 
-display: flex;
+    display: flex;
     font-size: 1rem;
     font-family: Antonio;
     text-align: center;
@@ -52,11 +51,15 @@ background-color:white;
 border: 3px solid #C4C7CC;
 letter-spacing:5px;
 border-radius: .2rem;
+margin-left: auto;
+margin-right: auto;
 `;
 const UserStats = styled.div`
 display:flex;
 flex:80%;
 flex-direction:column;
+margin-left: auto;
+margin-right: auto;
 `;
 
 const Box = styled.div`

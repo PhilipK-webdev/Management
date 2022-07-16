@@ -13,7 +13,9 @@ function TableUserInfo({ HEADER, information }) {
     const StyledTableCell = styled(TableCell)(({ theme }) => ({
         [`&.${tableCellClasses.head}`]: {
             fontSize: 20,
-            color: 'white'
+            color: 'white',
+            padding: '10px',
+
         },
         [`&.${tableCellClasses.body}`]: {
             fontSize: 18,
@@ -22,12 +24,13 @@ function TableUserInfo({ HEADER, information }) {
     }));
     return (
         <TableContainer component={Container} size="small" sx={{
-            border: "3px solid #C4C7CC", padding: "10px",
+            border: "3px solid #C4C7CC",
             boxShadow: "box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25)",
             backgroundColor: 'white',
             borderRadius: "0.5rem",
+            marginTop: "10px"
         }}>
-            <Table sx={{ minWidth: 500 }} aria-label="simple table">
+            <Table sx={{ minWidth: 500, marginTop: "10px", marginBottom: "5px" }} aria-label="simple table">
                 <TableHead sx={{ background: '#7E8696' }}>
                     <TableRow >
                         {HEADER.map((item, index) => {
@@ -41,7 +44,7 @@ function TableUserInfo({ HEADER, information }) {
                             key={indexInfo}
                             sx={{
                                 '&:last-child td, &:last-child th': { border: 0 },
-                                backgroundColor: indexInfo % 2 !== 0 ? "#C4C7CC" : "#D7ECF7"
+                                backgroundColor: indexInfo % 2 !== 0 ? "#C4C7CC" : "#D7ECF7",
                             }}>
                             <StyledTableCell component="th" scope="row" align="center" padding='normal'>{info.name}</StyledTableCell>
                             {info.Team ? <StyledTableCell align="center">{info.Team}</StyledTableCell > :
