@@ -7,7 +7,7 @@ const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
     width: 70vw;
-    height: 50vh;
+    height: 70vh;
     margin-top: 10vh;
 `;
 
@@ -15,7 +15,7 @@ const Card = styled.div`
     margin-top: auto;
     margin-bottom: auto;
     width: 50%;
-    height: 45vh;
+    height: 55vh;
     background-color:white;
     border-radius:1rem;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.25);
